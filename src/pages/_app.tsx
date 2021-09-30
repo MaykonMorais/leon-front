@@ -6,6 +6,7 @@ import '../components/info.scss'
 import '../components/intro.scss'
 import '../components/navbar.scss'
 import '../components/trustedBy.scss'
+import '../components/registerBox.scss'
 
 function MyApp({ Component, pageProps }: AppProps) {
 	return <Component {...pageProps} />
