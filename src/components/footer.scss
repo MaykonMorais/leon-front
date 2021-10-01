@@ -7,13 +7,17 @@
     height: 120px;
     font-family: "Montserrat", sans-serif;
 
+    Image{
+        margin-right: 30px;
+    }
+
     .icons{
         flex:1;
         display: flex;      
         margin-left: 60px;
-
+        
         img{
-            margin-right: 20px;
+            margin-right: 440px;
         }
     }
 

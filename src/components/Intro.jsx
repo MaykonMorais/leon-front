@@ -1,5 +1,7 @@
 import Hero from '../assets/Hero.png'
 import Image from 'next/image'
+import Link from 'next/link'
+
 const Intro = () => {
 	return (
 		<div className='intro'>
@@ -10,7 +12,9 @@ const Intro = () => {
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tellus
 						sem, tempus dictum rutrum eu, malesuada sed libero
 					</span>
-					<button>Experimente grátis</button>
+					<Link href='/Register'>
+						<button>Experimente grátis</button>
+					</Link>
 				</div>
 			</div>
 			<div className='right'>

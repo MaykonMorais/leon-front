@@ -3,6 +3,7 @@ import ArrowLeft from '../assets/Vector.png'
 import Logo from '../assets/Logo.png'
 import Image from 'next/image'
 import ArrowRight from '../assets/ArrowRight.png'
+import Link from 'next/link'
 
 const RegisterBox = () => {
 	return (
@@ -11,7 +12,7 @@ const RegisterBox = () => {
 				<div className='left'>
 					<div className='miniNavbar'>
 						<div className='arrow'>
-							<Image src={ArrowLeft} alt=''></Image>
+							<Link href='/'><Image src={ArrowLeft} alt=''></Image></Link>
 						</div>
 						<div className='logo'>
 							<Image src={Logo} alt=''></Image>

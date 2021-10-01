@@ -21,14 +21,16 @@
             flex-direction: column;
             margin-left: 60px;
             margin-bottom: 30px;
+            margin-right: 50px;
             font-size: 18px;
 
             .miniNavbar{
-                height: 100px;
+                height: 80px;
                 width: 100%;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
+                margin-bottom: 10px;
 
                 .arrow{
                     img{
@@ -36,10 +38,9 @@
                     }
                 }
                 .logo{
-                    height: 100px;
                     img{
                         height: 80%;
-                        max-height: 80px;
+                        max-height: 70px;
                     }
                 }
             }
