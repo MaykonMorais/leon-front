@@ -1,8 +1,8 @@
-import PhotoRegister from '../assets/PhotoRegister.png'
-import ArrowLeft from '../assets/Vector.png'
-import Logo from '../assets/Logo.png'
+import PhotoRegister from '@assets/PhotoRegister.png'
+import ArrowLeft from '@assets/Vector.png'
+import Logo from '@assets/Logo.png'
 import Image from 'next/image'
-import ArrowRight from '../assets/ArrowRight.png'
+import ArrowRight from '@assets/ArrowRight.png'
 import Link from 'next/link'
 
 const RegisterBox = () => {

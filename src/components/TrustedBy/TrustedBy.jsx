@@ -1,7 +1,7 @@
-import Adidas from '../assets/Adidas.png'
-import Puma from '../assets/Puma.png'
-import Netshoes from '../assets/Netshoes.png'
-import Nike from '../assets/Nike.png'
+import Adidas from '@assets/Adidas.png'
+import Puma from '@assets/Puma.png'
+import Netshoes from '@assets/Netshoes.png'
+import Nike from '@assets/Nike.png'
 import Image from 'next/image'
 
 const TrustedBy = () => {

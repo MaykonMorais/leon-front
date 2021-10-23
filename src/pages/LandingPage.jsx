@@ -1,8 +1,8 @@
-import Footer from '../components/Footer'
-import Info from '../components/Info'
-import Intro from '../components/Intro'
-import Navbar from '../components/Navbar'
-import TrustedBy from '../components/TrustedBy'
+import Footer from '../components/Footer/Footer'
+import Info from '../components/Info/Info'
+import Intro from '../components/Intro/Intro'
+import Navbar from '../components/Navbar/Navbar'
+import TrustedBy from '../components/TrustedBy/TrustedBy'
 
 const LandingPage = () => {
 	return (

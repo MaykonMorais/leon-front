@@ -1,4 +1,4 @@
-import Logo from '../assets/Logo.png'
+import Logo from '@assets/Logo.png'
 import Image from 'next/image'
 const Navbar = () => {
 	return (
