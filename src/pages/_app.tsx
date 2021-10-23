@@ -7,6 +7,7 @@ import '../components/Intro/intro.scss'
 import '../components/Navbar/navbar.scss'
 import '../components/TrustedBy/trustedBy.scss'
 import '../components/RegisterBox/registerBox.scss'
+import '../components/item.scss'
 
 function MyApp({ Component, pageProps }: AppProps) {
 	return <Component {...pageProps} />
