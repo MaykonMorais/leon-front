@@ -12,29 +12,32 @@ const RegisterBox = () => {
 				<div className='left'>
 					<div className='miniNavbar'>
 						<div className='arrow'>
-							<Link href='/'><Image src={ArrowLeft} alt=''></Image></Link>
+							<Link passHref href='/'>
+								<Image src={ArrowLeft} alt=''></Image>
+							</Link>
 						</div>
 						<div className='logo'>
 							<Image src={Logo} alt=''></Image>
 						</div>
 						<div className='extra'></div>
 					</div>
-                    <div className="span">Por favor, preencha os campos</div>
-                    <div className="form">
-                        <div className="labelEmail">Email</div>
-                        <input type="text" />
-                        <div className="labelSenha">Escolha sua senha</div>
-                        <input type="text" />
-                        <div className="labelRepitaSenha">Repita sua senha</div>
-                        <input type="text" />
-                        <button>Registrar</button>
-                    </div>
-                    <div className="logar">
-                        <span>Já tem uma conta?</span>
-                        <span className='fazerLogin'>Faça login 
-                        <Image src={ArrowRight} alt=''></Image>
-                        </span>
-                    </div>
+					<div className='span'>Por favor, preencha os campos</div>
+					<div className='form'>
+						<div className='labelEmail'>Email</div>
+						<input type='text' />
+						<div className='labelSenha'>Escolha sua senha</div>
+						<input type='text' />
+						<div className='labelRepitaSenha'>Repita sua senha</div>
+						<input type='text' />
+						<button>Registrar</button>
+					</div>
+					<div className='logar'>
+						<span>Já tem uma conta?</span>
+						<span className='fazerLogin'>
+							Faça login
+							<Image src={ArrowRight} alt=''></Image>
+						</span>
+					</div>
 				</div>
 				<div className='right'>
 					<Image src={PhotoRegister} alt=''></Image>

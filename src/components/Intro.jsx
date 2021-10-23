@@ -12,7 +12,7 @@ const Intro = () => {
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tellus
 						sem, tempus dictum rutrum eu, malesuada sed libero
 					</span>
-					<Link href='/Register'>
+					<Link passHref href='/Register'>
 						<button>Experimente grátis</button>
 					</Link>
 				</div>
