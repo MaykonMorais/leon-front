@@ -10,12 +10,14 @@ import '../components/RegisterBox/registerBox.scss'
 import '../components/item.scss'
 
 import { ThemeProvider } from 'styled-components'
+import GlobalStyle from '@src/styles/globalStyles'
 import { theme } from '@styles/theme'
 
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<>
 			<ThemeProvider theme={theme}>
+				<GlobalStyle />
 				<Component {...pageProps} />
 			</ThemeProvider>
 		</>
