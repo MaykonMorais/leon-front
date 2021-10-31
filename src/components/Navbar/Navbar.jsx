@@ -1,24 +1,26 @@
 import Logo from '@assets/Logo.png'
 import Image from 'next/image'
+
+import { Container, Left, Middle, Right } from './styles'
+
 const Navbar = () => {
 	return (
-		<div className='navbar'>
-			<div className='left'>
+		<Container>
+			<Left>
 				<span>Home</span>
 				<span>Blog</span>
 				<span>Horarios</span>
 				<span>Preços</span>
-			</div>
+			</Left>
 
-			<div className='middle'>
+			<Middle>
 				<Image src={Logo} alt='' />
-			</div>
+			</Middle>
 
-			<div className='right'>
+			<Right>
 				<button className='btEntrar'>Entrar</button>
-			</div>
-			
-		</div>
+			</Right>
+		</Container>
 	)
 }
 

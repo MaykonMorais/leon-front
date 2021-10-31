@@ -9,7 +9,16 @@ import '../components/TrustedBy/trustedBy.scss'
 import '../components/RegisterBox/registerBox.scss'
 import '../components/item.scss'
 
+import { ThemeProvider } from 'styled-components'
+import { theme } from '@styles/theme'
+
 function MyApp({ Component, pageProps }: AppProps) {
-	return <Component {...pageProps} />
+	return (
+		<>
+			<ThemeProvider theme={theme}>
+				<Component {...pageProps} />
+			</ThemeProvider>
+		</>
+	)
 }
 export default MyApp
