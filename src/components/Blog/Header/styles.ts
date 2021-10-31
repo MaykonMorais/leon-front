@@ -1,27 +1,29 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import media from 'styled-media-query'
-import logoImg from '@assets/Logo.png'
 
 export const Container = styled.nav`
-	${({ theme }) => css`
-		display: flex;
-		align-items: center;
-		justify-content: space-around;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
 
-		width: 100%;
-		height: 80px;
+	width: 100%;
+	height: 80px;
 
-		padding: 50px 60px;
+	padding: 50px 60px;
 
-		${media.lessThan('medium')`
+	${media.lessThan('medium')`
     padding: 25px 5px;
 
-  `}
 	`}
 `
 
 export const LeftContent = styled.div`
 	display: flex;
+
+	${media.lessThan('medium')`
+    display: none;
+
+	`}
 
 	width: 40%;
 	padding: 4px;
@@ -35,8 +37,8 @@ export const RightContent = styled.div`
 	display: flex;
 
 	${media.lessThan('medium')`
-    justify-content: flex-end;
-    width: 40%;
+    justify-content: center;
+    width: 50%;
 
   `}
 
@@ -53,6 +55,14 @@ export const Item = styled.div`
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 17px;
+
+	${media.lessThan('large')`
+    padding: 2px 15px 2px 0px;
+
+    &:not(:first-child) {
+		  padding: 2px 15px;
+	  }
+  `}
 
 	&:after {
 		content: ' ';
