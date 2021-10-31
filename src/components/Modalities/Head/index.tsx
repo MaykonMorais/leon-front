@@ -12,9 +12,7 @@ export default function Head() {
 		<Container>
 			<ModalityAreaText>
 				<Title>Modalidades</Title>
-				<Description>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-				</Description>
+				<Description>Conheça nossas modalidades disponíveis 😉</Description>
 			</ModalityAreaText>
 			<SearchArea>
 				<Search placeholder='Ioga, judô, ect.' />

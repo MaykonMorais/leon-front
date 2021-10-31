@@ -46,13 +46,14 @@ export const Description = styled.p`
 	${media.lessThan('medium')`
       font-size: 16px;
 	    font-weight: 400;
-	    line-height: 28px;
+	    line-height: 25px;
 	`}
 `
 
 export const SearchArea = styled.div`
 	display: flex;
 	align-items: center;
+	justify-content: flex-end;
 
 	${media.lessThan('medium')`
     width: 100%;
