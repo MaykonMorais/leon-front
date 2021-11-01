@@ -1,11 +1,11 @@
-import PhotoRegister from '@assets/PhotoRegister.png'
+import PhotoLogin from '@assets/PhotoLogin.png'
 import ArrowLeft from '@assets/Vector.png'
 import Logo from '@assets/Logo.png'
 import Image from 'next/image'
 import ArrowRight from '@assets/ArrowRight.png'
 import Link from 'next/link'
 
-const RegisterBox = () => {
+const LoginBox = () => {
 	return (
 		<div className='registerBox'>
 			<div className='box'>
@@ -21,32 +21,29 @@ const RegisterBox = () => {
 						</div>
 						<div className='extra'></div>
 					</div>
-					<div className='span'>Por favor, preencha os campos</div>
 					<div className='form'>
 						<div className='labelEmail'>Email</div>
 						<input type='text' />
-						<div className='labelSenha'>Escolha sua senha</div>
+						<div className='labelSenha'>Senha</div>
 						<input type='text' />
-						<div className='labelRepitaSenha'>Repita sua senha</div>
-						<input type='text' />
-						<button>Registrar</button>
+						<button>Entrar</button>
 					</div>
 					<div className='logar'>
-						<span>Já tem uma conta?</span>
-						<Link passHref href='/login'>
+						<span>Não tem uma conta?</span>
+						<Link passHref href='/Register'>
 							<span className='fazerLogin'>
-								Faça login
+								Registre-se
 								<Image src={ArrowRight} alt=''></Image>
 							</span>
 						</Link>
 					</div>
 				</div>
 				<div className='right'>
-					<Image src={PhotoRegister} alt=''></Image>
+					<Image src={PhotoLogin} alt=''></Image>
 				</div>
 			</div>
 		</div>
 	)
 }
 
-export default RegisterBox
+export default LoginBox
