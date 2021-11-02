@@ -1,4 +1,4 @@
-import ModalidadeImg from '../assets/Modalidade1.png'
+import ModalidadeImg from '@assets/Modalidade1.png'
 import Image from 'next/image'
 
 const Info = () => {

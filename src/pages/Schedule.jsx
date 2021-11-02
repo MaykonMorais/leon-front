@@ -7,10 +7,10 @@ const LandingPage = () => {
       <Navbar />
 
       <Item
-        number="25"
-        title="judo"
-        subtitle="11-00 as 12:00"
-        locale="bloco 1"
+        number='25'
+        title='judo'
+        subtitle='11-00 as 12:00'
+        locale='bloco 1'
         haveLocale={true}
         haveTrash={true}
       />

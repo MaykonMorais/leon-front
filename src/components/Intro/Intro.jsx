@@ -1,4 +1,4 @@
-import Hero from '../assets/Hero.png'
+import Hero from '@assets/Hero.png'
 import Image from 'next/image'
 import Link from 'next/link'
 

@@ -1,8 +1,8 @@
-import PhotoRegister from '../assets/PhotoRegister.png'
-import ArrowLeft from '../assets/Vector.png'
-import Logo from '../assets/Logo.png'
+import PhotoRegister from '@assets/PhotoRegister.png'
+import ArrowLeft from '@assets/Vector.png'
+import Logo from '@assets/Logo.png'
 import Image from 'next/image'
-import ArrowRight from '../assets/ArrowRight.png'
+import ArrowRight from '@assets/ArrowRight.png'
 import Link from 'next/link'
 
 const RegisterBox = () => {
@@ -33,10 +33,12 @@ const RegisterBox = () => {
 					</div>
 					<div className='logar'>
 						<span>Já tem uma conta?</span>
-						<span className='fazerLogin'>
-							Faça login
-							<Image src={ArrowRight} alt=''></Image>
-						</span>
+						<Link passHref href='/login'>
+							<span className='fazerLogin'>
+								Faça login
+								<Image src={ArrowRight} alt=''></Image>
+							</span>
+						</Link>
 					</div>
 				</div>
 				<div className='right'>

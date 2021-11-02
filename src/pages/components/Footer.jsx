@@ -1,8 +1,8 @@
 import './footer.scss'
-import Instagram from '../assets/instagram.png'
-import Wpp from '../assets/wpp.png'
-import Localizacao from '../assets/localizacao.png'
-import Facebook from '../assets/facebook.png'
+import Instagram from '@assets/instagram.png'
+import Wpp from '@assets/wpp.png'
+import Localizacao from '@assets/localizacao.png'
+import Facebook from '@assets/facebook.png'
 
 const Footer = () => {
 	return (

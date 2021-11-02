@@ -1,15 +1,26 @@
 import type { AppProps } from 'next/app'
 
 import 'tailwindcss/tailwind.css'
-import '../components/footer.scss'
-import '../components/info.scss'
-import '../components/intro.scss'
-import '../components/navbar.scss'
-import '../components/trustedBy.scss'
-import '../components/registerBox.scss'
-import '../components/item.scss'
+import '@components/Footer/footer.scss'
+import '@components/Info/info.scss'
+import '@components/Intro/intro.scss'
+import '@components/Navbar/navbar.scss'
+import '@components/TrustedBy/trustedBy.scss'
+import '@components/RegisterBox/registerBox.scss'
+import '@components/Item/item.scss'
+
+import { ThemeProvider } from 'styled-components'
+import GlobalStyle from '@src/styles/globalStyles'
+import { theme } from '@styles/theme'
 
 function MyApp({ Component, pageProps }: AppProps) {
-		return <Component {...pageProps} />
+	return (
+		<>
+			<ThemeProvider theme={theme}>
+				<GlobalStyle />
+				<Component {...pageProps} />
+			</ThemeProvider>
+		</>
+	)
 }
 export default MyApp
