@@ -1,15 +1,25 @@
-import mapPin from '../assets/map-pin.png'
-import trash from '../assets/trash.png'
+import mapPin from '@assets/map-pin.png'
+import trash from '@assets/trash.png'
 
 import Image from 'next/image'
-const Item = () => {
-	var number = 25
-	var title = 'Judô'
-	var subtitle = '11:00 - 12:00'
-	var locale = 'Sede Principal'
-	var haveLocale = false
-	var haveTrash = true
 
+interface Item {
+	number: number
+	title: string
+	subtitle: string
+	locale: string
+	haveLocale: boolean
+	haveTrash: boolean
+}
+
+const Item = ({
+	title,
+	number,
+	subtitle,
+	locale,
+	haveLocale,
+	haveTrash,
+}: Item) => {
 	function renderLocale() {
 		return (
 			<div className='locale'>
