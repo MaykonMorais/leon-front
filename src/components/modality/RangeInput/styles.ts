@@ -16,7 +16,7 @@ export const Range = styled.input`
 	display: block;
 	appearance: none;
 	max-width: 700px;
-	width: 100%;
+	width: 50%;
 	margin: 0;
 
 	height: ${height};
