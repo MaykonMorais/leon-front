@@ -23,7 +23,7 @@
 	"plugins": ["react", "@typescript-eslint", "prettier"],
 	"rules": {
 		"react/react-in-jsx-scope": "off",
-		"prettier/prettier": "error",
+		"prettier/prettier": ["error",{"endOfLine": "auto"}],
 		"import/prefer-default-export": "off",
 		"jsx-quotes": ["error", "prefer-single"],
 		"@typescript-eslint/explicit-module-boundary-types": "off",

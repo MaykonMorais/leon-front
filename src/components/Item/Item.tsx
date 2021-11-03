@@ -1,25 +1,19 @@
 import mapPin from '@assets/map-pin.png'
 import trash from '@assets/trash.png'
-
+import { ModelItem } from '@types'
 import Image from 'next/image'
 
-interface Item {
-	number: number
-	title: string
-	subtitle: string
-	locale: string
+interface props {
+	item: ModelItem
 	haveLocale: boolean
 	haveTrash: boolean
 }
 
 const Item = ({
-	title,
-	number,
-	subtitle,
-	locale,
+	item: { title, num, subtitle, locale },
 	haveLocale,
 	haveTrash,
-}: Item) => {
+}: props) => {
 	function renderLocale() {
 		return (
 			<div className='locale'>
@@ -36,7 +30,7 @@ const Item = ({
 	return (
 		<div className='item'>
 			<div className='father'>
-				<span className='number'>{number}</span>
+				<span className='number'>{num}</span>
 
 				<div className='titles'>
 					<span className='title'>{title}</span>

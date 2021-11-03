@@ -26,7 +26,7 @@
 		align-items: center;
 
 		color: #818181;
-		font-weight: 100;
+		font-weight:lighter;
 		font-size: 32px;
 	}
 
@@ -36,15 +36,14 @@
 		justify-content: space-between;
 		font-family: 'Montserrat', sans-serif;
 		flex-direction: column;
-		font-weight: lighter;
-		margin-right: 10px;
-
+		padding: 20;
 		.title {
 			font-weight: lighter;
 		}
 
 		.subtitle {
 			color: #818181;
+			font-weight: lighter;
 		}
 	}
 
@@ -57,5 +56,9 @@
 			margin-left: 5px;
 			font-weight: lighter;
 		}
+	}
+
+	.trash{
+		padding: 20px;
 	}
 }
