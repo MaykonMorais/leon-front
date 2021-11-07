@@ -3,29 +3,61 @@ import media from 'styled-media-query'
 
 export const Container = styled.div`
 	display: flex;
-	justify-content: space-between;
+	flex-direction: column;
+	background: #ffffff;
+	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.07);
+	border-radius: 10px;
+
+	padding: 16px;
 
 	${media.lessThan('medium')`
-      display: flex;
-      flex-direction: column;
-
-      padding: 25px 8px;
+      margin-bottom: 40px;
 	`}
-
-	padding: 10px 60px;
 `
 
-export const Title = styled.h2`
-	font-weight: 800;
-	line-height: 32px;
-	font-size: 24px;
-
-	margin-bottom: 8px;
+export const Section = styled.div`
+	display: flex;
+	justify-content: space-between;
 `
 
-export const Card = styled.div`
-	width: 400px;
-	height: 400px;
+export const SectionArea = styled.div`
+	position: relative;
+`
+export const SectionText = styled.div`
+	display: flex;
+	align-items: center;
 
-	border-radius: 10px;
+	margin-bottom: 12px;
+`
+export const SectionDescription = styled.p`
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 29px;
+	color: ${({ color }) => color || 'inherit'};
+
+	margin-left: 8px;
+`
+
+export const RegisterButton = styled.button`
+	width: 100%;
+	background: #ff774e;
+	border-radius: 5px;
+	padding: 6px;
+
+	color: #fff;
+
+	&:hover {
+		background: #dd6945;
+	}
+`
+
+export const TeacherPhoto = styled.img`
+	position: relative;
+	top: -50px;
+
+	border: 1px solid #dd6945;
+
+	border-radius: 50%;
+	width: 120px;
+	height: 120px;
 `

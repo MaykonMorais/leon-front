@@ -1,7 +1,7 @@
 import Header from '@components/common/Header'
 import ModalityDetail from '@components/modality/ModalityDetail'
 import Filters from '@components/modality/Filters'
-import ClassCard from '@src/components/modality/ClassCard'
+import AvaliableClasses from '@src/components/modality/AvaliableClasses'
 
 export default function Modality() {
 	return (
@@ -10,7 +10,7 @@ export default function Modality() {
 			<ModalityDetail />
 
 			<Filters />
-			<ClassCard />
+			<AvaliableClasses />
 		</>
 	)
 }
