@@ -11,7 +11,7 @@ export default function Header() {
 			</LeftContent>
 
 			<RightContent>
-				<Logo src='Logo.png' />
+				<Logo src='/Logo.png' />
 			</RightContent>
 		</Container>
 	)
