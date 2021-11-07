@@ -12,7 +12,6 @@ const customStyles = {
 
 	indicatorSeparator: (provided: any, state: any) => ({
 		...provided,
-		border: '1px solid red',
 		display: 'none',
 	}),
 }
