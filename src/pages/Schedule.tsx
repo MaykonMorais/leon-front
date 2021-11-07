@@ -1,5 +1,5 @@
-import Navbar from '../components/Navbar/Navbar'
-import Item from '../components/Item/Item'
+import Navbar from '@components/Navbar/Navbar'
+import Item from '@components/Item/Item'
 import Tittle from '@components/Schendule/Tittle'
 import { ModelItem } from '@src/types'
 
