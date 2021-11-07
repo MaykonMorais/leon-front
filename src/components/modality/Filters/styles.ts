@@ -15,21 +15,42 @@ export const Container = styled.div`
 	padding: 10px 60px;
 `
 
-export const LeftContent = styled.div`
+export const Row = styled.div`
 	display: flex;
 	flex: 1;
+
+	${media.lessThan('medium')`
+      display: flex;
+      flex-direction: column;
+
+      flex: 1;
+
+      align-items: flex-start;
+	    justify-content: space-between;
+	`}
+
 	align-items: center;
 	justify-content: space-between;
-
-	padding-right: 80px;
 `
 
 export const InputArea = styled.div`
 	display: flex;
 	flex-direction: column;
 
-	flex: 1;
+	&:first-child {
+		margin-right: 50px;
+	}
 
+	${media.lessThan('medium')`
+
+    width: 100%;
+    &:first-child {
+      margin-right: 0px;
+    }
+    margin-bottom: 16px;
+
+	`}
+	flex: 1;
 	padding: 4px 0px;
 `
 

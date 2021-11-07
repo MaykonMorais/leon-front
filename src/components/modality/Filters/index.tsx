@@ -1,27 +1,21 @@
-import RangeInput from '../RangeInput'
+import DropdownInput from '@components/common/DropdownInput'
 
-import {
-	Container,
-	InputArea,
-	Title,
-	LeftContent,
-	TempDescription,
-} from './styles'
+import { Container, InputArea, Title, Row } from './styles'
 
 export default function Filters() {
 	return (
 		<Container>
-			<LeftContent>
+			<Row>
 				<InputArea>
-					<Title>Preço</Title>
-					<RangeInput />
+					<Title>Professores</Title>
+					<DropdownInput placeholder='Selecione um Professor' />
 				</InputArea>
 
 				<InputArea>
-					<Title>Data</Title>
-					<TempDescription>De Hoje até 22 de Março</TempDescription>
+					<Title>Academias</Title>
+					<DropdownInput placeholder='Selecione uma academia' />
 				</InputArea>
-			</LeftContent>
+			</Row>
 		</Container>
 	)
 }
