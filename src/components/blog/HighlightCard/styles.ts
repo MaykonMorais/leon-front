@@ -46,7 +46,7 @@ export const Title = styled.h2`
 	font-size: 48px;
 	line-height: 64px;
 
-	${media.lessThan('large')`
+	${media.between('medium', 'large')`
       font-weight: 800;
       font-size: 40px;
       line-height: 64px;
