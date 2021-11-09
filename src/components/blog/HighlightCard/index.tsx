@@ -16,7 +16,7 @@ export default function index() {
 				<Title>Lorem Ipsum Doloret Etsum</Title>
 				<Description>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tellus
-					sem, tempus dictum rutrum eu, malesuada sed libero
+					sem, tempus dictum rutrum eu, malesuada sed libero...
 				</Description>
 			</Content>
 		</Container>
