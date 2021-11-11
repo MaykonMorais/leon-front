@@ -8,6 +8,8 @@ export const Container = styled.div`
 	${media.lessThan('medium')`
       flex-direction: column;
 	`}
+
+	margin-bottom: 32px;
 `
 
 export const BlogImage = styled.img`
