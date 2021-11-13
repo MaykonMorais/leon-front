@@ -7,11 +7,24 @@ export const Container = styled.div`
 
 export const PictureContainer = styled.div`
 	display: flex;
+	flex-direction: column;
+
 	justify-content: center;
 	align-items: center;
 
 	flex: 1;
 `
+export const UploadLabel = styled.label`
+	background: #ff774e;
+	color: white;
+	padding: 8px 16px;
+
+	border-radius: 0.3rem;
+	cursor: pointer;
+	margin-top: 1rem;
+`
+
+export const UploadButton = styled.input``
 
 export const InputContainer = styled.div`
 	display: flex;
