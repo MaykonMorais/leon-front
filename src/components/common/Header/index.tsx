@@ -1,13 +1,23 @@
+import Link from 'next/link'
+
 import { Container, LeftContent, Logo, RightContent, Item } from './styles'
 
 export default function Header() {
 	return (
 		<Container>
 			<LeftContent>
-				<Item>Home</Item>
-				<Item>Blog</Item>
-				<Item>Modalidades</Item>
-				<Item>Agenda</Item>
+				<Link href='/' passHref>
+					<Item>Home</Item>
+				</Link>
+				<Link href='/blog' passHref>
+					<Item>Blog</Item>
+				</Link>
+				<Link href='/modalities' passHref>
+					<Item>Modalidades</Item>
+				</Link>
+				<Link href='/schedule' passHref>
+					<Item>Agenda</Item>
+				</Link>
 			</LeftContent>
 
 			<RightContent>

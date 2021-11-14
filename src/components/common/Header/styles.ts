@@ -45,7 +45,7 @@ export const RightContent = styled.div`
 	width: 60%;
 `
 
-export const Item = styled.div`
+export const Item = styled.a`
 	padding: 2px 28px 2px 0px;
 
 	&:not(:first-child) {
