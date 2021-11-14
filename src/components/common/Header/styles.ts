@@ -4,7 +4,7 @@ import media from 'styled-media-query'
 export const Container = styled.nav`
 	display: flex;
 	align-items: center;
-	justify-content: space-around;
+	justify-content: space-between;
 
 	width: 100%;
 	height: 80px;
@@ -29,20 +29,23 @@ export const LeftContent = styled.div`
 	padding: 4px;
 `
 
-export const Logo = styled.img`
+export const Logo = styled.img``
+
+export const MiddleContent = styled.div`
 	display: flex;
+	flex: 1;
 `
 
 export const RightContent = styled.div`
 	display: flex;
+	align-items: center;
+	justify-content: flex-end;
 
 	${media.lessThan('medium')`
     justify-content: center;
-    width: 50%;
+
 
   `}
-
-	width: 60%;
 `
 
 export const Item = styled.a`
@@ -102,4 +105,16 @@ export const Item = styled.a`
 			);
 		}
 	}
+`
+
+export const SignInButton = styled.button`
+	height: 36px;
+
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 12px;
+
+	padding: 5px 60px;
+	border: 1px solid #ff774e;
+	border-radius: 5px;
 `

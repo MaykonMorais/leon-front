@@ -1,6 +1,14 @@
 import Link from 'next/link'
 
-import { Container, LeftContent, Logo, RightContent, Item } from './styles'
+import {
+	Container,
+	LeftContent,
+	Logo,
+	RightContent,
+	Item,
+	SignInButton,
+	MiddleContent,
+} from './styles'
 
 export default function Header() {
 	return (
@@ -19,9 +27,11 @@ export default function Header() {
 					<Item>Agenda</Item>
 				</Link>
 			</LeftContent>
-
-			<RightContent>
+			<MiddleContent>
 				<Logo src='/Logo.png' />
+			</MiddleContent>
+			<RightContent>
+				<SignInButton>Entrar</SignInButton>
 			</RightContent>
 		</Container>
 	)
