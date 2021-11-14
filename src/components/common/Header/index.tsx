@@ -31,7 +31,9 @@ export default function Header() {
 				<Logo src='/Logo.png' />
 			</MiddleContent>
 			<RightContent>
-				<SignInButton>Entrar</SignInButton>
+				<Link href='/login' passHref>
+					<SignInButton>Entrar</SignInButton>
+				</Link>
 			</RightContent>
 		</Container>
 	)

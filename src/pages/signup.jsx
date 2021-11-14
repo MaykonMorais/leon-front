@@ -1,6 +1,6 @@
 import RegisterBox from '../components/RegisterBox/RegisterBox'
 
-const Register = () => {
+const SignUp = () => {
 	return (
 		<div className='register'>
 			<RegisterBox />
@@ -8,4 +8,4 @@ const Register = () => {
 	)
 }
 
-export default Register
+export default SignUp
