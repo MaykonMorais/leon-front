@@ -28,7 +28,6 @@ export const Card = styled.div`
 
 	${media.lessThan('medium')`
       width: 90%;
-      height: 90%;
 
       padding: 16px;
   `}
@@ -149,6 +148,10 @@ export const Input = styled.input`
 	outline: none;
 
 	padding: 8px 16px;
+
+	${media.lessThan('small')`
+    width: 98%;
+  `}
 `
 
 export const SignInButton = styled.button`
@@ -165,6 +168,10 @@ export const SignInButton = styled.button`
 	padding: 8px 16px;
 
 	background: #ff774e;
+
+	${media.lessThan('medium')`
+    margin-bottom: 16px;
+  `}
 
 	&:hover {
 		background: #f3734c;
