@@ -1,3 +1,4 @@
-export interface Teste {
-	teste: string
+export interface ILogin {
+	email: string
+	password: string
 }

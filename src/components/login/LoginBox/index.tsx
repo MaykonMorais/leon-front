@@ -1,6 +1,9 @@
 import Link from 'next/link'
 import { FiArrowRight } from 'react-icons/fi'
 
+import { useDispatch } from 'react-redux'
+import { login } from '@actions/user'
+
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
@@ -24,7 +27,9 @@ import {
 	RegisterArea,
 	RegisterButton,
 } from './styles'
+
 import InputError from '@src/components/common/InputError'
+import { ILogin } from '@types'
 
 const loginSchema = yup.object({
 	email: yup
@@ -35,6 +40,8 @@ const loginSchema = yup.object({
 })
 
 export default function Box() {
+	const dispatch = useDispatch()
+
 	const {
 		register,
 		handleSubmit,
@@ -43,7 +50,9 @@ export default function Box() {
 		resolver: yupResolver(loginSchema),
 	})
 
-	const onSubmit = data => console.log(data)
+	const onSubmit = ({ email, password }: ILogin) => {
+		dispatch(login(email, password))
+	}
 
 	return (
 		<Container>
