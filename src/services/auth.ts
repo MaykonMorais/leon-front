@@ -1,7 +1,7 @@
 import api from './api'
 import { config } from '@utils/config'
 
-const { users } = config.endpoints
+const { users, auth } = config.endpoints
 
 export async function signup(email: string, password: string) {
 	return await api
@@ -11,6 +11,6 @@ export async function signup(email: string, password: string) {
 
 export async function signin(email: string, password: string) {
 	return await api
-		.post(users, { email, password })
+		.post(auth, { email, password })
 		.then(response => response.data)
 }
