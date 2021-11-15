@@ -2,13 +2,27 @@ import mapPin from '@assets/map-pin.png'
 import trash from '@assets/trash.png'
 import { ModelItem } from '@types'
 import Image from 'next/image'
-import { Container,Father,Titles,Title,Subtitle,Locale,Number,ContainerEnd } from './styles'
+import { 
+	Container,
+	Father,
+	Titles,
+	Title,
+	Subtitle,
+	Locale,
+	Number,
+	ContainerEnd,
+	Txtgray,
+	Txtred,
+	Txtgreen,
+	Txtyelow,
+} from './styles'
+
+
 
 interface props {
 	item: ModelItem
 	haveLocale?: boolean
 	haveTrash?: boolean
-	color?:string
 }
 
 const Item = ({
@@ -29,10 +43,30 @@ const Item = ({
 		return <Image className='trash' width={15} height={15} src={trash} alt='' />
 	}
 
+	function colorNumber() {
+
+		var ret;
+
+		if(subtitle === "Pago")
+			ret = <Txtgreen>{num}</Txtgreen>
+		else
+		if(subtitle === "Atrasado")
+			ret = <Txtyelow>{num}</Txtyelow>
+		else
+		if(subtitle === "Pendente")
+			ret = <Txtred>{num}</Txtred>
+		else
+			ret = <Txtgray>{num}</Txtgray>
+
+		return ret;
+	}
+
 	return (
 		<Container>
 			<Father>
-				<Number>{num}</Number>
+				<Number>
+					{colorNumber()}
+				</Number>
 
 				<Titles>
 					<Title>{title}</Title>

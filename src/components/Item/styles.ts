@@ -29,19 +29,29 @@ export const Titles = styled.div`
 	padding: 20;
 	
 `
-export const Number =styled.span`
+export const Number = styled.span`
 	display: flex;
 	justify-content: space-around;
 	flex: 1;
 	width: 80px;
 	height: 80px;
 	align-items: center;
-
-	color: #818181;
 	font-weight:lighter;
-	font-size: 32px;
+	font-size: 20px;
 `
 
+export const Txtgray = styled.text`
+	color: #818181;
+`
+export const Txtgreen = styled.text`
+	color: #25B002;
+`
+export const Txtyelow= styled.text`
+	color: #E90505;
+`
+export const Txtred = styled.text`
+	color: #F0B100;
+`
 
 export const Title = styled.span`
 	font-weight: lighter;
