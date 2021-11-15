@@ -1,5 +1,5 @@
 export interface ModelItem {
-	num: number
+	num: string
 	title: string
 	subtitle: string
 	locale: string

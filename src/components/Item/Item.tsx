@@ -6,8 +6,9 @@ import { Container,Father,Titles,Title,Subtitle,Locale,Number,ContainerEnd } fro
 
 interface props {
 	item: ModelItem
-	haveLocale: boolean
-	haveTrash: boolean
+	haveLocale?: boolean
+	haveTrash?: boolean
+	color?:string
 }
 
 const Item = ({
