@@ -52,7 +52,7 @@ export default function Box() {
 					<BottomContent>
 						<RegisterArea>
 							Não tem uma conta? <br />{' '}
-							<Link href='/register' passHref>
+							<Link href='/signup' passHref>
 								<RegisterButton>
 									<span>Registre-se</span> <FiArrowRight size={18} />
 								</RegisterButton>

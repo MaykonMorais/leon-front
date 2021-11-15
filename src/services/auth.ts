@@ -8,3 +8,9 @@ export async function signup(email: string, password: string) {
 		.post(users, { email, password })
 		.then(response => response.data)
 }
+
+export async function signin(email: string, password: string) {
+	return await api
+		.post(users, { email, password })
+		.then(response => response.data)
+}
