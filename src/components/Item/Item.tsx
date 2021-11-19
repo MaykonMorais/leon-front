@@ -2,6 +2,7 @@ import mapPin from '@assets/map-pin.png'
 import trash from '@assets/trash.png'
 import { ModelItem } from '@types'
 import Image from 'next/image'
+import { Container,Father,Titles,Title,Subtitle,Locale,Number,ContainerEnd } from './styles'
 
 interface props {
 	item: ModelItem
@@ -16,10 +17,10 @@ const Item = ({
 }: props) => {
 	function renderLocale() {
 		return (
-			<div className='locale'>
+			<Locale>
 				<Image src={mapPin} width={15} height={15} alt='' />
-				<span>{locale}</span>
-			</div>
+				<Title>{locale}</Title>
+			</Locale>
 		)
 	}
 
@@ -28,20 +29,22 @@ const Item = ({
 	}
 
 	return (
-		<div className='item'>
-			<div className='father'>
-				<span className='number'>{num}</span>
+		<Container>
+			<Father>
+				<Number>{num}</Number>
 
-				<div className='titles'>
-					<span className='title'>{title}</span>
-					<span className='subtitle'>{subtitle}</span>
-				</div>
+				<Titles>
+					<Title>{title}</Title>
+					<Subtitle>{subtitle}</Subtitle>
+				</Titles>
 
 				{haveLocale && renderLocale()}
-			</div>
+			</Father>
 
-			{haveTrash && renderTrash()}
-		</div>
+			<ContainerEnd>
+				{haveTrash && renderTrash()}
+			</ContainerEnd>
+		</Container>
 	)
 }
 

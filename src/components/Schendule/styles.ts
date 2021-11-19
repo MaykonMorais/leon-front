@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-betwe	padding: 10px 60px;
 `
 export const Right = styled.div`
 	flex-direction: column;
@@ -26,6 +26,10 @@ export const Right = styled.div`
 		}
 	}
 `
+export const Button = styled.div`
+	display: flex;
+	justify-content: end;
+`
 export const Left = styled.div`
-	font-family: 'Montserrat', sans-serif;
+	justify-content: end;
 `
