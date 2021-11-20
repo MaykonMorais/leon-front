@@ -11,7 +11,7 @@ const AdminHome = () => {
 	return (
 		<>
 			<Header />
-			<BodyContainer>
+			<BodyContainer partialBackground>
 				<MenuAdmin />
 			</BodyContainer>
 		</>

@@ -18,6 +18,8 @@ export const Card = styled.div`
 	flex-direction: column;
 	align-items: center;
 
+	background: linear-gradient(180deg, #fcf8f5 0%, #f9f6ee 100%);
+
 	padding: 8px;
 
 	box-shadow: -2px 4px 45px rgba(0, 0, 0, 0.13);

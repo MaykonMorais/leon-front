@@ -3,8 +3,12 @@ import { Container } from './styles'
 
 interface BodyProps {
 	children: ReactNode
+	partialBackground?: boolean
 }
 
-export default function BodyContainer({ children }: BodyProps) {
-	return <Container>{children}</Container>
+export default function BodyContainer({
+	children,
+	partialBackground,
+}: BodyProps) {
+	return <Container partial={!!partialBackground}>{children}</Container>
 }
