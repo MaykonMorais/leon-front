@@ -18,13 +18,16 @@ import '@components/ItemMenu/ItemMenu.scss'
 import { ThemeProvider } from 'styled-components'
 import GlobalStyle from '@src/styles/globalStyles'
 import { theme } from '@styles/theme'
+import { AuthProvider } from '@src/contexts/AuthContext'
 
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<StoreProvider store={store}>
 			<ThemeProvider theme={theme}>
 				<GlobalStyle />
-				<Component {...pageProps} />
+				<AuthProvider>
+					<Component {...pageProps} />
+				</AuthProvider>
 			</ThemeProvider>
 		</StoreProvider>
 	)
