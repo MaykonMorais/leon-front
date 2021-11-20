@@ -1,3 +1,6 @@
+import axios, { AxiosError } from 'axios'
+import { toast } from 'react-toastify'
+
 import { Dispatch } from 'redux'
 import { setCookie } from 'nookies'
 
@@ -9,11 +12,25 @@ import { signup, signin } from '@services/auth'
 
 export function createUser(email: string, password: string) {
 	return async (dispatch: Dispatch) => {
-		const data = await signup(email, password)
+		try {
+			await signup(email, password)
 
-		console.warn(data)
+			const notify = () => toast.success('Usuário cadastrado com sucesso!')
+			notify()
 
-		// dispatch({ type: 'SET_USER' })
+			dispatch({ type: 'SET_STATUS', payload: { status: 'registered' } })
+		} catch (error) {
+			if (axios.isAxiosError(error)) {
+				if (error.response?.status === 409) {
+					const notify = () => toast.error('Email já está sendo usado')
+					notify()
+				}
+			}
+
+			dispatch({ type: 'SET_STATUS', payload: { status: 'fail' } })
+		}
+
+		dispatch({ type: 'SET_STATUS', payload: { status: null } })
 	}
 }
 

@@ -1,9 +1,15 @@
-import Link from 'next/link'
+import { useEffect } from 'react'
 import { FiArrowRight } from 'react-icons/fi'
 
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
+
+import { useDispatch, useSelector } from 'react-redux'
+import { createUser } from '@actions/user'
+
+import { useRouter } from 'next/router'
+import Link from 'next/link'
 
 import {
 	Container,
@@ -26,6 +32,7 @@ import {
 } from './styles'
 
 import InputError from '@components/common/InputError'
+import { IRootState } from '@src/types'
 
 const signupSchema = yup.object({
 	email: yup
@@ -38,7 +45,18 @@ const signupSchema = yup.object({
 		.oneOf([yup.ref('password'), null], 'Ops! As senhas precisam ser iguais'),
 })
 
+type RegisterType = {
+	email: string
+	password: string
+	retypePassword: string
+}
+
 export default function RegisterBox() {
+	const dispatch = useDispatch()
+	const router = useRouter()
+
+	const { status } = useSelector((state: IRootState) => state.user)
+
 	const {
 		register,
 		handleSubmit,
@@ -47,7 +65,13 @@ export default function RegisterBox() {
 		resolver: yupResolver(signupSchema),
 	})
 
-	const onSubmit = data => console.log(data)
+	const onSubmit = ({ email, password }: RegisterType) => {
+		dispatch(createUser(email, password))
+	}
+
+	if (status === 'registered') {
+		router.push('/login')
+	}
 
 	return (
 		<Container>
