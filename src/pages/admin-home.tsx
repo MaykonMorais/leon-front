@@ -1,16 +1,20 @@
 import { GetServerSideProps } from 'next'
 import { parseCookies } from 'nookies'
 
-import MenuAdmin from '@src/components/MenuAdmin/MenuAdmin'
-import NavbarHome from '@src/components/NavbarHome/NavbarHome'
-import { config } from '@src/utils/config'
+import { config } from '@utils/config'
+
+import Header from '@components/admin/Header'
+import BodyContainer from '@components/common/BodyContainer'
+import MenuAdmin from '@components/admin/MenuAdmin'
 
 const AdminHome = () => {
 	return (
-		<div className='login'>
-			<NavbarHome />
-			<MenuAdmin />
-		</div>
+		<>
+			<Header />
+			<BodyContainer>
+				<MenuAdmin />
+			</BodyContainer>
+		</>
 	)
 }
 
