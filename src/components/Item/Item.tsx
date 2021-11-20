@@ -2,7 +2,16 @@ import mapPin from '@assets/map-pin.png'
 import trash from '@assets/trash.png'
 import { ModelItem } from '@types'
 import Image from 'next/image'
-import { Container,Father,Titles,Title,Subtitle,Locale,Number,ContainerEnd } from './styles'
+import {
+	Container,
+	Father,
+	Titles,
+	Title,
+	Subtitle,
+	Locale,
+	Number,
+	ContainerEnd,
+} from './styles'
 
 interface props {
 	item: ModelItem
@@ -41,9 +50,7 @@ const Item = ({
 				{haveLocale && renderLocale()}
 			</Father>
 
-			<ContainerEnd>
-				{haveTrash && renderTrash()}
-			</ContainerEnd>
+			<ContainerEnd>{haveTrash && renderTrash()}</ContainerEnd>
 		</Container>
 	)
 }

@@ -7,7 +7,6 @@ import '@components/Intro/intro.scss'
 import '@components/Navbar/navbar.scss'
 import '@components/TrustedBy/trustedBy.scss'
 import '@components/RegisterBox/registerBox.scss'
-import '@components/Item/item.scss'
 
 import { ThemeProvider } from 'styled-components'
 import GlobalStyle from '@src/styles/globalStyles'
