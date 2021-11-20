@@ -1,16 +1,38 @@
-const initialState = {}
+import { parseCookies } from 'nookies'
+import { config } from '@src/utils/config'
 
-interface IAction {
-	type: string
+import { IAction } from '@types'
+
+const { [`${config.storageUserToken}`]: token } = parseCookies()
+
+const initialState = {
+	status: null,
+	authenticated: !!token,
 }
 
-const userReducer = (state = initialState, action: IAction) => {
+interface IUserAction extends IAction {
+	type: string
+	payload: {
+		status: string
+		authStatus: boolean
+	}
+}
+
+const userReducer = (state = initialState, action: IUserAction) => {
 	switch (action.type) {
-		case 'SET_USER':
+		case 'SET_STATUS':
 			return {
 				...state,
-				user: { name: 'Maykon Morais' },
+				status: action.payload.status,
+				...(action.payload.status === 'success' && { authenticated: true }),
 			}
+
+		case 'SET_AUTH_STATUS': {
+			return {
+				...state,
+				authenticated: action.payload.authStatus,
+			}
+		}
 		default:
 			return { ...state }
 	}
