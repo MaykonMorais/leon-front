@@ -1,13 +1,15 @@
 import Footer from '../components/Footer/Footer'
 import Info from '../components/Info/Info'
 import Intro from '../components/Intro/Intro'
-import Navbar from '../components/Navbar/Navbar'
 import TrustedBy from '../components/TrustedBy/TrustedBy'
+
+import Header from '@components/common/Header'
 
 const LandingPage = () => {
 	return (
 		<div>
-			<Navbar />
+			<Header />
+
 			<Intro />
 			<TrustedBy />
 			<Info />
