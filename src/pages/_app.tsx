@@ -19,6 +19,9 @@ import { ThemeProvider } from 'styled-components'
 import GlobalStyle from '@src/styles/globalStyles'
 import { theme } from '@styles/theme'
 import { AuthProvider } from '@src/contexts/AuthContext'
+import { ToastContainer } from 'react-toastify'
+
+import 'react-toastify/dist/ReactToastify.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
@@ -27,6 +30,14 @@ function MyApp({ Component, pageProps }: AppProps) {
 				<GlobalStyle />
 				<AuthProvider>
 					<Component {...pageProps} />
+					<ToastContainer
+						position='top-right'
+						autoClose={4000}
+						hideProgressBar={false}
+						pauseOnFocusLoss
+						closeOnClick
+						pauseOnHover
+					/>
 				</AuthProvider>
 			</ThemeProvider>
 		</StoreProvider>
