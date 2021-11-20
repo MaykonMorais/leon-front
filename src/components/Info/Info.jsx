@@ -1,5 +1,7 @@
 import ModalidadeImg from '@assets/Modalidade1.png'
 import Image from 'next/image'
+import { BtnVerMais } from './Info.styled'
+import Link from 'next/link'
 
 const Info = () => {
 	return (
@@ -33,6 +35,9 @@ const Info = () => {
 						</span>
 					</div>
 				</div>
+				<Link passHref href='/modalities'>
+					<BtnVerMais>Ver mais</BtnVerMais>
+				</Link>
 			</div>
 		</div>
 	)
