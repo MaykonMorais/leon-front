@@ -1,7 +1,9 @@
+import { useContext, useEffect } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { FiArrowRight } from 'react-icons/fi'
 
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { login } from '@actions/user'
 
 import { useForm } from 'react-hook-form'
@@ -29,7 +31,7 @@ import {
 } from './styles'
 
 import InputError from '@src/components/common/InputError'
-import { ILogin } from '@types'
+import { ILogin, IRootState } from '@types'
 
 const loginSchema = yup.object({
 	email: yup
@@ -40,7 +42,10 @@ const loginSchema = yup.object({
 })
 
 export default function Box() {
+	const { authenticated } = useSelector((state: IRootState) => state.user)
 	const dispatch = useDispatch()
+
+	const router = useRouter()
 
 	const {
 		register,
@@ -52,6 +57,10 @@ export default function Box() {
 
 	const onSubmit = ({ email, password }: ILogin) => {
 		dispatch(login(email, password))
+	}
+
+	if (authenticated) {
+		router.push('/admin-home')
 	}
 
 	return (
