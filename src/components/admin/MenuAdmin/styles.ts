@@ -10,6 +10,14 @@ export const Container = styled.div`
 	grid-auto-rows: auto;
 	grid-gap: 1rem;
 
+	${media.between('medium', 'large')`
+      padding: 15px;
+  `}
+
+	${media.lessThan('small')`
+      padding: 0px;
+  `}
+
 	padding: 40px;
 `
 
