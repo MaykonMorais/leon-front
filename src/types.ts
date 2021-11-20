@@ -1,3 +1,9 @@
+export interface ModelItem {
+	num: number
+	title: string
+	subtitle: string
+	locale: string
+}
 export interface ILogin {
 	email: string
 	password: string
