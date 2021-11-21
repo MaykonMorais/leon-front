@@ -1,5 +1,27 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import media from 'styled-media-query'
+
+type WrapperProps = {
+	duration?: number
+}
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`
+
+export const Wrapper = styled.div<WrapperProps>`
+	@media (prefers-reduced-motion: no-preference) {
+		animation-name: ${fadeIn};
+		animation-duration: ${({ duration }) =>
+			duration ? `${duration}s` : '0.7s'};
+		animation-fill-mode: backwards;
+	}
+`
 
 export const Container = styled.div`
 	display: flex;
@@ -15,6 +37,12 @@ export const Container = styled.div`
 
 	font-weight: bold;
 	margin-bottom: 16px;
+	transition: 0.6s ease-in;
+	position: relative;
+
+	&:hover {
+		box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	}
 `
 export const Father = styled.div`
 	display: flex;
