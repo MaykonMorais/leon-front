@@ -3,6 +3,7 @@ import { IAction, IModality } from '@types'
 const initialState = {
 	data: [],
 	loading: false,
+	resultSearch: null,
 }
 
 interface IScheduleData extends IAction {
@@ -10,6 +11,7 @@ interface IScheduleData extends IAction {
 	payload: {
 		modalities?: Array<IModality>
 		loading?: boolean
+		resultSearch?: IModality
 	}
 }
 
@@ -25,6 +27,12 @@ const modalitiesReducer = (state = initialState, action: IScheduleData) => {
 			return {
 				...state,
 				loading: action.payload.loading,
+			}
+
+		case 'SET_SEARCHED_MODALITY':
+			return {
+				...state,
+				resultSearch: action.payload.resultSearch,
 			}
 
 		default:
