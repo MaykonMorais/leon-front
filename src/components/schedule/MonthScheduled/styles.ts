@@ -6,6 +6,7 @@ export const Month = styled.h2`
 	line-height: 29px;
 
 	color: rgba(0, 0, 0, 0.8);
+	text-transform: uppercase;
 
 	margin-bottom: 8px;
 `
