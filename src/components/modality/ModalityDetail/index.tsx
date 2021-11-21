@@ -1,3 +1,4 @@
+import { IModality } from '@src/types'
 import {
 	Container,
 	ImageDetail,
@@ -7,21 +8,22 @@ import {
 	Description,
 } from './styles'
 
-export default function ModalityDetail() {
+interface ModalityDetailProps {
+	props: IModality
+}
+
+export default function ModalityDetail({
+	props: { name, description, imageURL },
+}: ModalityDetailProps) {
 	return (
 		<Container>
 			<LeftContent>
-				<ImageDetail src='/modalidade_example_2x.png' />
+				<ImageDetail src={imageURL} />
 			</LeftContent>
 
 			<RightContent>
-				<Title>Modalidade Genérica</Title>
-				<Description>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra
-					sollicitudin diam, ac fringilla leo pretium vitae. Donec congue ligula
-					non elit hendrerit rhoncus eget ut ligula. Sed convallis suscipit
-					sapien, ac vestibulum nulla.
-				</Description>
+				<Title>{name}</Title>
+				<Description>{description}</Description>
 			</RightContent>
 		</Container>
 	)
