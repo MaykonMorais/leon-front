@@ -1,9 +1,10 @@
 import Header from '@components/common/Header'
-import BodyContainer from '@src/components/common/BodyContainer'
-import { ModelItem } from '@src/types'
+import BodyContainer from '@components/common/BodyContainer'
+import { ModelItem } from '@types'
 
-import HeadSchedule from '@src/components/schedule/Head'
-import ScheduleBody from '@src/components/schedule/ScheduleBody'
+import HeadSchedule from '@components/schedule/Head'
+import ScheduleBody from '@components/schedule/ScheduleBody'
+import ScheduleCard from '@components/schedule/ScheduleCard'
 
 const LandingPage = () => {
 	const data: Array<ModelItem> = [
@@ -33,6 +34,17 @@ const LandingPage = () => {
 			<BodyContainer>
 				<ScheduleBody>
 					<HeadSchedule />
+
+					{data.map((item, index) => {
+						return (
+							<ScheduleCard
+								key={index}
+								item={item}
+								haveLocale={true}
+								haveTrash={true}
+							/>
+						)
+					})}
 				</ScheduleBody>
 			</BodyContainer>
 		</div>
