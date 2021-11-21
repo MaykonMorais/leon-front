@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 import { IModality } from '@src/types'
 import {
 	Container,
@@ -23,9 +25,11 @@ export default function ModalityCard({
 				<CardTitle>{name}</CardTitle>
 				<CardDescription>{description}</CardDescription>
 
-				<SeeMoreButton>
-					<span>Ver mais</span>
-				</SeeMoreButton>
+				<Link href={`/modality/${name}`} passHref>
+					<SeeMoreButton>
+						<span>Ver mais</span>
+					</SeeMoreButton>
+				</Link>
 			</CardBody>
 		</Container>
 	)
