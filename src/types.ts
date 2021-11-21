@@ -16,7 +16,7 @@ export interface ILogin {
 
 export interface IToken {
 	sub: string
-	roles: [string]
+	roles: Array<string>
 	iss: string
 	exp: number
 }
