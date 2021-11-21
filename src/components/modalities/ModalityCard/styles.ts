@@ -3,6 +3,13 @@ import styled from 'styled-components'
 export const Container = styled.div`
 	display: flex;
 	flex-direction: column;
+
+	position: relative;
+	transition: all ease-in 0.7s;
+
+	&:hover {
+		top: -2px;
+	}
 `
 
 export const CardImg = styled.img`
@@ -41,6 +48,7 @@ export const SeeMoreButton = styled.a`
 	cursor: pointer;
 
 	transition: ease 0.7s;
+
 	&:hover {
 		color: #74311d;
 	}
