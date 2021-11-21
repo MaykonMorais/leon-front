@@ -36,11 +36,3 @@ export default function ModalityBody() {
 		</>
 	)
 }
-
-/* {data.length > 0 && (
-				<>
-					{data.map(modality => {
-						return <ModalityCard key={modality.id} data={modality} />
-					})}
-				</>
-			)} */
