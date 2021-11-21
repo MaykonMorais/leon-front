@@ -55,12 +55,37 @@ export const RescheduleButton = styled.button`
 	border: 1px solid #25b002;
 	border-radius: 5px;
 	padding: 4px;
+	position: relative;
 
 	font-size: 16px;
+
+	&:hover {
+		font-weight: 500;
+		color: #fff;
+		border: 1px solid #ff774e;
+		border-radius: 5px;
+	}
 
 	${media.lessThan('medium')`
       font-size: 14px;
   `}
+
+	&:after {
+		height: 100%;
+		left: 0;
+		top: 0;
+		width: 0;
+
+		background: #ff774e;
+		content: '';
+		position: absolute;
+		z-index: -1;
+		transition: all 0.7s;
+	}
+
+	&:hover::after {
+		width: 100%;
+	}
 
 	margin-top: 4px;
 `
