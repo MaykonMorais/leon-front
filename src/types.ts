@@ -4,6 +4,11 @@ export interface ModelItem {
 	subtitle: string
 	locale: string
 }
+
+export interface MonthScheduled {
+	month: string
+	days: Array<ModelItem>
+}
 export interface ILogin {
 	email: string
 	password: string
