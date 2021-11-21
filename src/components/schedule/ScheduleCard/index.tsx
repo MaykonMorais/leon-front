@@ -1,5 +1,5 @@
 import mapPin from '@assets/map-pin.png'
-import { ModelItem } from '@types'
+import { ILecture } from '@types'
 import Image from 'next/image'
 
 import { FiTrash } from 'react-icons/fi'
@@ -17,14 +17,19 @@ import {
 } from './style'
 
 interface props {
-	item: ModelItem
+	item: ILecture
 	haveLocale: boolean
 	haveTrash: boolean
 	duration?: number
 }
 
 const Item = ({
-	item: { title, num, subtitle, locale },
+	item: {
+		classe,
+		day,
+		location,
+		time: { begin, end },
+	},
 	haveLocale,
 	haveTrash,
 	duration,
@@ -33,7 +38,7 @@ const Item = ({
 		return (
 			<Locale>
 				<Image src={mapPin} width={15} height={15} alt='' />
-				<Title>{locale}</Title>
+				<Title>{location}</Title>
 			</Locale>
 		)
 	}
@@ -46,11 +51,11 @@ const Item = ({
 		<Wrapper duration={duration}>
 			<Container>
 				<Father>
-					<Number>{num}</Number>
+					<Number>{day}</Number>
 
 					<Titles>
-						<Title>{title}</Title>
-						<Subtitle>{subtitle}</Subtitle>
+						<Title>{classe}</Title>
+						<Subtitle>{`${begin} - ${end}`}</Subtitle>
 					</Titles>
 
 					{haveLocale && renderLocale()}
