@@ -61,6 +61,7 @@ export interface IScheduleState {
 export interface IModalitiesState {
 	data: Array<IModality>
 	loading: boolean
+	resultSearch: IModality
 }
 
 export interface IRootState {
