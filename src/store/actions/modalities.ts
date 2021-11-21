@@ -4,7 +4,7 @@ import { toast } from 'react-toastify'
 import { Dispatch } from 'redux'
 import { IModality } from '@types'
 
-import { getModalitiesData } from '@services/modalities'
+import { getModalitiesData, searchModalityByName } from '@services/modalities'
 
 export function getModalities() {
 	return async (dispatch: Dispatch) => {
@@ -15,6 +15,24 @@ export function getModalities() {
 			dispatch({
 				type: 'SET_MODALITIES',
 				payload: { modalities: data, loading: false },
+			})
+		} catch (error) {
+			if (axios.isAxiosError(error)) {
+				const notify = () => toast.error('Ops! Algo de errado ocorreu')
+				notify()
+			}
+		}
+	}
+}
+
+export function getModalityByName(name: string) {
+	return async (dispatch: Dispatch) => {
+		try {
+			const data: Array<IModality> = await searchModalityByName(name)
+
+			dispatch({
+				type: 'SET_SEARCHED_MODALITY',
+				payload: { resultSearch: data[0] },
 			})
 		} catch (error) {
 			if (axios.isAxiosError(error)) {
