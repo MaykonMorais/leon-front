@@ -6,10 +6,9 @@ export const Container = styled.div`
 	padding: 10px 60px;
 `
 export const Right = styled.div`
-	
 	.button {
 		background-color: white;
-		border: solid 1px #25B002;
+		border: solid 1px #25b002;
 		width: 190px;
 		height: 36px;
 		border-radius: 10px;
@@ -20,13 +19,13 @@ export const Right = styled.div`
 
 		&:hover {
 			color: white;
-			background-color: #25B002;
+			background-color: #25b002;
 			border: solid 1px white;
 		}
 	}
 `
 export const Button = styled.div`
-	display: flex;	
+	display: flex;
 	justify-content: end;
 `
 export const Left = styled.div`

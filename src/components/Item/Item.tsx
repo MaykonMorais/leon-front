@@ -2,7 +2,7 @@ import mapPin from '@assets/map-pin.png'
 import trash from '@assets/trash.png'
 import { ModelItem } from '@types'
 import Image from 'next/image'
-import { 
+import {
 	Container,
 	Father,
 	Titles,
@@ -16,8 +16,6 @@ import {
 	Txtgreen,
 	Txtyelow,
 } from './styles'
-
-
 
 interface props {
 	item: ModelItem
@@ -44,29 +42,20 @@ const Item = ({
 	}
 
 	function colorNumber() {
+		let ret
 
-		var ret;
+		if (subtitle === 'Pago') ret = <Txtgreen>{num}</Txtgreen>
+		else if (subtitle === 'Atrasado') ret = <Txtyelow>{num}</Txtyelow>
+		else if (subtitle === 'Pendente') ret = <Txtred>{num}</Txtred>
+		else ret = <Txtgray>{num}</Txtgray>
 
-		if(subtitle === "Pago")
-			ret = <Txtgreen>{num}</Txtgreen>
-		else
-		if(subtitle === "Atrasado")
-			ret = <Txtyelow>{num}</Txtyelow>
-		else
-		if(subtitle === "Pendente")
-			ret = <Txtred>{num}</Txtred>
-		else
-			ret = <Txtgray>{num}</Txtgray>
-
-		return ret;
+		return ret
 	}
 
 	return (
 		<Container>
 			<Father>
-				<Number>
-					{colorNumber()}
-				</Number>
+				<Number>{colorNumber()}</Number>
 
 				<Titles>
 					<Title>{title}</Title>
@@ -76,9 +65,7 @@ const Item = ({
 				{haveLocale && renderLocale()}
 			</Father>
 
-			<ContainerEnd>
-				{haveTrash && renderTrash()}
-			</ContainerEnd>
+			<ContainerEnd>{haveTrash && renderTrash()}</ContainerEnd>
 		</Container>
 	)
 }
