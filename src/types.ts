@@ -47,11 +47,24 @@ export interface IUserState {
 	authenticated: boolean
 }
 
+export interface IModality {
+	id: number
+	name: string
+	description: string
+	imageURL: string
+}
+
 export interface IScheduleState {
 	data: Array<ISchedule>
+}
+
+export interface IModalitiesState {
+	data: Array<IModality>
+	loading: boolean
 }
 
 export interface IRootState {
 	user: IUserState
 	schedule: IScheduleState
+	modalities: IModalitiesState
 }
