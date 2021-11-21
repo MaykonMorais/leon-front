@@ -9,5 +9,6 @@ export const config = {
 	endpoints: {
 		auth: '/auth',
 		users: '/users',
+		schedules: '/schedules',
 	},
 }
