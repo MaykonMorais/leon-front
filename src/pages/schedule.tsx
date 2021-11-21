@@ -1,6 +1,10 @@
+import { GetServerSideProps } from 'next'
+import { parseCookies } from 'nookies'
+import { config } from '@utils/config'
+
 import Header from '@components/common/Header'
 import BodyContainer from '@components/common/BodyContainer'
-import { ModelItem, MonthScheduled } from '@types'
+import { MonthScheduled } from '@types'
 
 import HeadSchedule from '@components/schedule/Head'
 import ScheduleBody from '@components/schedule/ScheduleBody'
@@ -78,3 +82,20 @@ const Schedule = () => {
 }
 
 export default Schedule
+
+export const getServerSideProps: GetServerSideProps = async ctx => {
+	const { [`${config.storageUserToken}`]: token } = parseCookies(ctx)
+
+	if (!token) {
+		return {
+			redirect: {
+				destination: '/login',
+				permanent: false,
+			},
+		}
+	}
+
+	return {
+		props: {},
+	}
+}
