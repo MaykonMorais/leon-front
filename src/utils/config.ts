@@ -10,5 +10,6 @@ export const config = {
 		auth: '/auth',
 		users: '/users',
 		schedules: '/schedules',
+		modalities: '/modalities',
 	},
 }
