@@ -47,6 +47,12 @@ export interface IUserState {
 	authenticated: boolean
 }
 
+export interface ITeacher {
+	id: number
+	name: string
+	avatarURL: string
+}
+
 export interface IModality {
 	id: number
 	name: string
@@ -64,8 +70,13 @@ export interface IModalitiesState {
 	resultSearch: IModality
 }
 
+export interface ITeacherState {
+	data: Array<ITeacher>
+}
+
 export interface IRootState {
 	user: IUserState
 	schedule: IScheduleState
 	modalities: IModalitiesState
+	teachers: ITeacherState
 }
