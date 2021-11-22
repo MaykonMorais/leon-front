@@ -60,8 +60,18 @@ export interface IModality {
 	imageURL: string
 }
 
+export interface IGym {
+	id: number
+	name: string
+	address: string
+}
+
 export interface IScheduleState {
 	data: Array<ISchedule>
+}
+
+export interface IGymState {
+	data: Array<IGym>
 }
 
 export interface IModalitiesState {
@@ -79,4 +89,5 @@ export interface IRootState {
 	schedule: IScheduleState
 	modalities: IModalitiesState
 	teachers: ITeacherState
+	gyms: IGymState
 }
