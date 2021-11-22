@@ -7,15 +7,28 @@ import { useSelector } from 'react-redux'
 import { Container, InputArea, Title, Row } from './styles'
 
 export default function Filters() {
-	const { data } = useSelector((state: IRootState) => state.teachers)
+	const { data: teacherData } = useSelector(
+		(state: IRootState) => state.teachers
+	)
+
+	const { data: gymsData } = useSelector((state: IRootState) => state.gyms)
 
 	const teachers = useMemo(
 		() =>
-			data.map(teacher => ({
+			teacherData.map(teacher => ({
 				label: teacher.name,
 				value: teacher.id,
 			})),
-		[data]
+		[teacherData]
+	)
+
+	const gyms = useMemo(
+		() =>
+			gymsData.map(gym => ({
+				label: gym.name,
+				value: gym.id,
+			})),
+		[gymsData]
 	)
 
 	return (
@@ -31,7 +44,7 @@ export default function Filters() {
 
 				<InputArea>
 					<Title>Academias</Title>
-					<DropdownInput placeholder='Selecione uma academia' />
+					<DropdownInput options={gyms} placeholder='Selecione uma academia' />
 				</InputArea>
 			</Row>
 		</Container>
