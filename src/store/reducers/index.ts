@@ -4,7 +4,8 @@ import { combineReducers } from 'redux'
 import user from './user'
 import schedule from './schedule'
 import modalities from './modalities'
+import teachers from './teachers'
 
-const rootReducer = combineReducers({ user, schedule, modalities })
+const rootReducer = combineReducers({ user, schedule, modalities, teachers })
 
 export default rootReducer
