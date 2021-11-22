@@ -9,5 +9,9 @@ export const config = {
 	endpoints: {
 		auth: '/auth',
 		users: '/users',
+		schedules: '/schedules',
+		modalities: '/modalities',
+		teachers: '/teachers',
+		gyms: '/gyms',
 	},
 }

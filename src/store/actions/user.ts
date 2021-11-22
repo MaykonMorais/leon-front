@@ -35,19 +35,25 @@ export function createUser(email: string, password: string) {
 }
 
 export function login(email: string, password: string) {
-	const { storageUserToken } = config
+	const { storageUserToken, storageUser } = config
 
 	return async (dispatch: Dispatch) => {
 		try {
 			// eslint-disable-next-line camelcase
 			const { access_token } = await signin(email, password)
-			const { exp } = jwtDecode<IToken>(access_token)
+			const { exp, roles } = jwtDecode<IToken>(access_token)
 
 			setCookie(undefined, storageUserToken, access_token, {
 				maxAge: 60 * 60 * 1,
 			})
 
-			dispatch({ type: 'SET_STATUS', payload: { status: 'success' } })
+			setCookie(undefined, storageUser, roles[0], { maxAge: 60 * 60 * 1 })
+
+			dispatch({
+				type: 'SET_STATUS',
+				payload: { status: 'success', userType: roles[0] },
+			})
+
 			setAuth(true)
 		} catch (error) {
 			dispatch({ type: 'SET_STATUS', payload: { status: 'error' } })

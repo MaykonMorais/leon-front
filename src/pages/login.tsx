@@ -15,11 +15,14 @@ const Login = () => {
 
 export const getServerSideProps: GetServerSideProps = async ctx => {
 	const { [`${config.storageUserToken}`]: token } = parseCookies(ctx)
+	const { [`${config.storageUser}`]: userType } = parseCookies(ctx)
 
 	if (token) {
+		const destination = userType === 'ROLE_ADMIN' ? '/admin-home' : '/schedule'
+
 		return {
 			redirect: {
-				destination: '/admin-home',
+				destination,
 				permanent: false,
 			},
 		}

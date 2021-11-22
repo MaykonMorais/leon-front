@@ -10,6 +10,9 @@ import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 
+import { config } from '@src/utils/config'
+import { parseCookies } from 'nookies'
+
 import {
 	Container,
 	Card,
@@ -60,7 +63,11 @@ export default function Box() {
 	}
 
 	if (authenticated) {
-		router.push('/admin-home')
+		const { [`${config.storageUser}`]: userType } = parseCookies()
+
+		userType === 'ROLE_ADMIN'
+			? router.push('/admin-home')
+			: router.push('/schedule')
 	}
 
 	return (

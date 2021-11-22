@@ -1,3 +1,6 @@
+import Link from 'next/link'
+
+import { IModality } from '@src/types'
 import {
 	Container,
 	CardImg,
@@ -7,21 +10,26 @@ import {
 	SeeMoreButton,
 } from './styles'
 
-export default function ModalityCard() {
+interface ModalityProps {
+	data: IModality
+}
+
+export default function ModalityCard({
+	data: { name, description, imageURL },
+}: ModalityProps) {
 	return (
 		<Container>
-			<CardImg src='modalidade_example.png' />
+			<CardImg src={imageURL} />
 
 			<CardBody>
-				<CardTitle>Turma 1. Fitness</CardTitle>
-				<CardDescription>
-					Nessa modalidade iremos treinar os bíceps e trícepts, além de treinar
-					a respiração
-				</CardDescription>
+				<CardTitle>{name}</CardTitle>
+				<CardDescription>{description}</CardDescription>
 
-				<SeeMoreButton>
-					<span>Ver mais</span>
-				</SeeMoreButton>
+				<Link href={`/modality/${name}`} passHref>
+					<SeeMoreButton>
+						<span>Ver mais</span>
+					</SeeMoreButton>
+				</Link>
 			</CardBody>
 		</Container>
 	)

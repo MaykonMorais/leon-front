@@ -4,10 +4,12 @@ import { config } from '@src/utils/config'
 import { IAction } from '@types'
 
 const { [`${config.storageUserToken}`]: token } = parseCookies()
+const { [`${config.storageUser}`]: userType } = parseCookies()
 
 const initialState = {
 	status: null,
 	authenticated: !!token,
+	userType: userType,
 }
 
 interface IUserAction extends IAction {
@@ -15,6 +17,7 @@ interface IUserAction extends IAction {
 	payload: {
 		status: string
 		authStatus: boolean
+		userType: string
 	}
 }
 
@@ -24,6 +27,7 @@ const userReducer = (state = initialState, action: IUserAction) => {
 			return {
 				...state,
 				status: action.payload.status,
+				userType: action.payload.userType,
 				...(action.payload.status === 'success' && { authenticated: true }),
 			}
 
