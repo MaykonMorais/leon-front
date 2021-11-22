@@ -1,4 +1,4 @@
-import Select, { components } from 'react-select'
+import Select, { components, Options } from 'react-select'
 import { FiChevronDown } from 'react-icons/fi'
 
 const customStyles = {
@@ -31,11 +31,16 @@ const DropdownIndicator = (props: any) => {
 	)
 }
 
+interface Option {
+	label: string
+	value: number | string
+}
 interface SelectInput {
 	placeholder: string
+	options?: Array<Option>
 }
 
-export default function DropdownInput({ placeholder }: SelectInput) {
+export default function DropdownInput({ placeholder, options }: SelectInput) {
 	return (
 		<Select
 			components={{ DropdownIndicator }}
