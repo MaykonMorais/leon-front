@@ -1,14 +1,32 @@
+import { useMemo } from 'react'
 import DropdownInput from '@components/common/DropdownInput'
+import { IRootState } from '@src/types'
+
+import { useSelector } from 'react-redux'
 
 import { Container, InputArea, Title, Row } from './styles'
 
 export default function Filters() {
+	const { data } = useSelector((state: IRootState) => state.teachers)
+
+	const teachers = useMemo(
+		() =>
+			data.map(teacher => ({
+				label: teacher.name,
+				value: teacher.id,
+			})),
+		[data]
+	)
+
 	return (
 		<Container>
 			<Row>
 				<InputArea>
 					<Title>Professores</Title>
-					<DropdownInput placeholder='Selecione um Professor' />
+					<DropdownInput
+						options={teachers}
+						placeholder='Selecione um Professor'
+					/>
 				</InputArea>
 
 				<InputArea>
