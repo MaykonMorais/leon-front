@@ -8,6 +8,7 @@ import { config } from '@utils/config'
 import { useSelector, useDispatch } from 'react-redux'
 import { getModalityByName } from '@actions/modalities'
 import { getTeachers } from '@actions/teachers'
+import { getGyms } from '@actions/gyms'
 
 import Header from '@components/common/Header'
 import ModalityDetail from '@components/modality/ModalityDetail'
@@ -35,6 +36,7 @@ export default function Modality() {
 	useEffect(() => {
 		const { name } = router.query
 		dispatch(getTeachers())
+		dispatch(getGyms())
 
 		const modality = findByName(name as string)[0]
 		if (!modality) {
