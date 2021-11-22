@@ -16,11 +16,6 @@ const customStyles = {
 	}),
 }
 
-const options = [
-	{ value: '1', label: 'Junior Silva' },
-	{ value: '2', label: 'Fernando Pereira' },
-]
-
 const DropdownIndicator = (props: any) => {
 	return (
 		components.DropdownIndicator && (
