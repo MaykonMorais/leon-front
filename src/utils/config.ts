@@ -11,5 +11,7 @@ export const config = {
 		users: '/users',
 		schedules: '/schedules',
 		modalities: '/modalities',
+		teachers: '/teachers',
+		gyms: '/gyms',
 	},
 }
