@@ -1,8 +1,13 @@
 import { useEffect, useCallback, useState } from 'react'
 import { useRouter } from 'next/router'
+import { GetServerSideProps } from 'next'
+
+import { parseCookies } from 'nookies'
+import { config } from '@utils/config'
 
 import { useSelector, useDispatch } from 'react-redux'
 import { getModalityByName } from '@actions/modalities'
+import { getTeachers } from '@actions/teachers'
 
 import Header from '@components/common/Header'
 import ModalityDetail from '@components/modality/ModalityDetail'
@@ -29,9 +34,9 @@ export default function Modality() {
 
 	useEffect(() => {
 		const { name } = router.query
+		dispatch(getTeachers())
 
 		const modality = findByName(name as string)[0]
-
 		if (!modality) {
 			dispatch(getModalityByName(name as string))
 		} else {
@@ -52,4 +57,21 @@ export default function Modality() {
 			)}
 		</>
 	)
+}
+
+export const getServerSideProps: GetServerSideProps = async ctx => {
+	const { [`${config.storageUserToken}`]: token } = parseCookies(ctx)
+
+	if (!token) {
+		return {
+			redirect: {
+				destination: '/login',
+				permanent: false,
+			},
+		}
+	}
+
+	return {
+		props: {},
+	}
 }
