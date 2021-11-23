@@ -74,10 +74,27 @@ export interface IGymState {
 	data: Array<IGym>
 }
 
+export interface Interval {
+	id: number
+	month: number
+	day: number
+	initialTime: string
+	finalTime: string
+}
+
+export interface IClass {
+	id: number
+	gym: IGym
+	price: number
+	teacher: ITeacher
+	intervals: Array<Interval>
+}
+
 export interface IModalitiesState {
 	data: Array<IModality>
 	loading: boolean
 	resultSearch: IModality
+	searchedClasses: Array<IClass>
 }
 
 export interface ITeacherState {

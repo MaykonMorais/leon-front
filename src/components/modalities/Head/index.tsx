@@ -1,3 +1,5 @@
+import {} from '@actions/modalities'
+
 import {
 	Container,
 	ModalityAreaText,
@@ -8,6 +10,8 @@ import {
 } from './styles'
 
 export default function Head() {
+	const searchModality = () => {}
+
 	return (
 		<Container>
 			<ModalityAreaText>
@@ -15,7 +19,14 @@ export default function Head() {
 				<Description>Conheça nossas modalidades disponíveis 😉</Description>
 			</ModalityAreaText>
 			<SearchArea>
-				<Search placeholder='Ioga, judô, ect.' />
+				<Search
+					onKeyDown={e => {
+						if (e.code === 'Enter') {
+							searchModality()
+						}
+					}}
+					placeholder='Ioga, judô, ect.'
+				/>
 			</SearchArea>
 		</Container>
 	)

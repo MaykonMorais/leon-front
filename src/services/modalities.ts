@@ -12,3 +12,20 @@ export async function searchModalityByName(name: string) {
 		.get(`${modalities}/search?name=${name}`)
 		.then(response => response.data)
 }
+
+export async function searchModalityClasses(
+	modality?: number,
+	teacher?: number,
+	gym?: number
+) {
+	const params = {
+		...(teacher && { teacher: teacher.toString() }),
+		...(gym && { gym: gym.toString() }),
+	}
+
+	const qs = new URLSearchParams(params)
+
+	return await api
+		.get(`${modalities}/${modality}/classes?${qs}`)
+		.then(response => response.data)
+}

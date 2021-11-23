@@ -17,15 +17,21 @@ import GlobalStyle from '@src/styles/globalStyles'
 import { theme } from '@styles/theme'
 import { AuthProvider } from '@src/contexts/AuthContext'
 import { ToastContainer } from 'react-toastify'
+import Head from '@components/Head'
 
 import 'react-toastify/dist/ReactToastify.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
+	const keywords = ['saúde', 'leon', 'web']
+	const url = 'https://leon.trabweb.com'
+
 	return (
 		<StoreProvider store={store}>
 			<ThemeProvider theme={theme}>
 				<GlobalStyle />
 				<AuthProvider>
+					<Head keywords={keywords} url={url} />
+
 					<Component {...pageProps} />
 					<ToastContainer
 						position='top-right'
