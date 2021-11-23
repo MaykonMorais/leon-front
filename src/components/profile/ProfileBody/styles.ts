@@ -78,3 +78,14 @@ export const ButtonContainer = styled.div`
 	display: flex;
 	justify-content: flex-end;
 `
+
+export const SignOutButton = styled.button`
+	background: #dd6945;
+
+	width: 40%;
+	color: #fff;
+	font-weight: 600;
+	border-radius: 10px;
+
+	padding: 5px 8px;
+`
