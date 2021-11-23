@@ -14,3 +14,7 @@ export async function signin(email: string, password: string) {
 		.post(auth, { email, password })
 		.then(response => response.data)
 }
+
+export async function getUser(email: string) {
+	return await api.get(`${users}/${email}`).then(response => response.data)
+}

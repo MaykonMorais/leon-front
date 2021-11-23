@@ -11,7 +11,7 @@ interface IHead {
 }
 
 export default function Head({ title, description, keywords, url }: IHead) {
-	const metaTitle = title || 'Leon'
+	const metaTitle = title || 'LEON'
 	const metaDescription = description || 'Mantenha-se Saudável'
 	const metaKeywords = Array.isArray(keywords) ? keywords.join(', ') : keywords
 

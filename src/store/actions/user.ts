@@ -8,7 +8,7 @@ import jwtDecode from 'jwt-decode'
 import { IToken } from '@types'
 
 import { config } from '@utils/config'
-import { signup, signin } from '@services/auth'
+import { signup, signin, getUser } from '@services/auth'
 
 export function createUser(email: string, password: string) {
 	return async (dispatch: Dispatch) => {
@@ -41,7 +41,7 @@ export function login(email: string, password: string) {
 		try {
 			// eslint-disable-next-line camelcase
 			const { access_token } = await signin(email, password)
-			const { exp, roles } = jwtDecode<IToken>(access_token)
+			const { exp, roles, sub } = jwtDecode<IToken>(access_token)
 
 			setCookie(undefined, storageUserToken, access_token, {
 				maxAge: 60 * 60 * 1,
@@ -58,6 +58,19 @@ export function login(email: string, password: string) {
 		} catch (error) {
 			dispatch({ type: 'SET_STATUS', payload: { status: 'error' } })
 		}
+	}
+}
+
+export function getUserByEmail(email: string) {
+	return async (dispath: Dispatch) => {
+		try {
+			const data = await getUser(email)
+
+			dispath({
+				type: 'SET_USER',
+				payload: { loggedUser: data },
+			})
+		} catch (error) {}
 	}
 }
 

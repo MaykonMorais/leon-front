@@ -1,5 +1,7 @@
 import Link from 'next/link'
 
+import { useSelector } from 'react-redux'
+
 import {
 	Container,
 	LeftContent,
@@ -8,9 +10,13 @@ import {
 	Item,
 	SignInButton,
 	MiddleContent,
+	ProfilePicture,
 } from './styles'
+import { IRootState } from '@src/types'
 
 export default function Header() {
+	const { authenticated } = useSelector((state: IRootState) => state.user)
+
 	return (
 		<Container>
 			<LeftContent>
@@ -31,9 +37,15 @@ export default function Header() {
 				<Logo src='/Logo.png' />
 			</MiddleContent>
 			<RightContent>
-				<Link href='/login' passHref>
-					<SignInButton>Entrar</SignInButton>
-				</Link>
+				{authenticated ? (
+					<Link href='/profile' passHref>
+						<ProfilePicture src='https://i.imgur.com/QdLOFBP.jpg' />
+					</Link>
+				) : (
+					<Link href='/login' passHref>
+						<SignInButton>Entrar</SignInButton>
+					</Link>
+				)}
 			</RightContent>
 		</Container>
 	)
