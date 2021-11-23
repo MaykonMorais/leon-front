@@ -5,8 +5,6 @@ import {
 	LeftContent,
 	Logo,
 	RightContent,
-	Item,
-	SignInButton,
 	MiddleContent,
 	ProfilePicture,
 } from './styles'

@@ -13,5 +13,5 @@ export const BtnVerMais = styled.button`
 	font-size: 16;
 	font-weight: 500;
 	padding: 10px 10px;
-    align-self: flex-end;
+	align-self: flex-end;
 `

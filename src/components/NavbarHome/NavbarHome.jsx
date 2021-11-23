@@ -23,10 +23,10 @@ const NavbarHome = () => {
 							borderRadius: 9999,
 							borderStyle: 'solid',
 							borderWidth: 1,
-							borderStyle: 'solid',
 							borderColor: 'white',
 						}}
 						src='https://via.placeholder.com/61x61'
+						alt='Image'
 					/>
 				</Right>
 			</Link>
