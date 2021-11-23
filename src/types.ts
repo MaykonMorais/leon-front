@@ -42,9 +42,20 @@ export interface IAction {
 	type: string
 }
 
+export interface IUser {
+	address: string
+	availableExperiments: number
+	avatarURL: string
+	birthday: string
+	email: string
+	id: number
+	name: string
+}
+
 export interface IUserState {
 	status: string
 	authenticated: boolean
+	loggedUser: IUser
 }
 
 export interface ITeacher {

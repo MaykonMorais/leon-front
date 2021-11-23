@@ -64,10 +64,13 @@ export default function Box() {
 
 	if (authenticated) {
 		const { [`${config.storageUser}`]: userType } = parseCookies()
+		const { [`${config.storageUserToken}`]: token } = parseCookies()
 
-		userType === 'ROLE_ADMIN'
-			? router.push('/admin-home')
-			: router.push('/schedule')
+		if (token) {
+			userType === 'ROLE_ADMIN'
+				? router.push('/admin-home')
+				: router.push('/schedule')
+		}
 	}
 
 	return (

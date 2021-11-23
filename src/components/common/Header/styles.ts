@@ -118,3 +118,12 @@ export const SignInButton = styled.button`
 	border: 1px solid #ff774e;
 	border-radius: 5px;
 `
+
+export const ProfilePicture = styled.img`
+	border-radius: 50%;
+
+	cursor: pointer;
+
+	width: 45px;
+	height: 45px;
+`

@@ -1,7 +1,7 @@
 import { parseCookies } from 'nookies'
 import { config } from '@src/utils/config'
 
-import { IAction } from '@types'
+import { IAction, IUser } from '@types'
 
 const { [`${config.storageUserToken}`]: token } = parseCookies()
 const { [`${config.storageUser}`]: userType } = parseCookies()
@@ -10,6 +10,7 @@ const initialState = {
 	status: null,
 	authenticated: !!token,
 	userType: userType,
+	loggedUser: null,
 }
 
 interface IUserAction extends IAction {
@@ -18,6 +19,7 @@ interface IUserAction extends IAction {
 		status: string
 		authStatus: boolean
 		userType: string
+		loggedUser: IUser
 	}
 }
 
@@ -35,6 +37,13 @@ const userReducer = (state = initialState, action: IUserAction) => {
 			return {
 				...state,
 				authenticated: action.payload.authStatus,
+			}
+		}
+
+		case 'SET_USER': {
+			return {
+				...state,
+				loggedUser: action.payload.loggedUser,
 			}
 		}
 		default:
