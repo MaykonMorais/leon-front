@@ -53,7 +53,7 @@ export default function Modality() {
 				<>
 					<ModalityDetail props={modality || resultSearch} />
 
-					<Filters />
+					<Filters id={modality?.id ? modality.id : resultSearch.id} />
 					<AvaliableClasses />
 				</>
 			)}

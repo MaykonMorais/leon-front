@@ -4,6 +4,7 @@ const initialState = {
 	data: [],
 	loading: false,
 	resultSearch: null,
+	searchedClasses: [],
 }
 
 interface IScheduleData extends IAction {
@@ -12,6 +13,7 @@ interface IScheduleData extends IAction {
 		modalities?: Array<IModality>
 		loading?: boolean
 		resultSearch?: IModality
+		searchedClasses: any
 	}
 }
 
@@ -34,7 +36,11 @@ const modalitiesReducer = (state = initialState, action: IScheduleData) => {
 				...state,
 				resultSearch: action.payload.resultSearch,
 			}
-
+		case 'SET_SEARCHED_CLASSES':
+			return {
+				...state,
+				searchedClasses: action.payload.searchedClasses,
+			}
 		default:
 			return { ...state }
 	}

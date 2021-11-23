@@ -1,12 +1,25 @@
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import DropdownInput from '@components/common/DropdownInput'
 import { IRootState } from '@src/types'
 
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { getModalityClasses } from '@actions/modalities'
 
 import { Container, InputArea, Title, Row } from './styles'
 
-export default function Filters() {
+interface FilterProps {
+	id?: number
+}
+
+export default function Filters({ id }: FilterProps) {
+	const dispatch = useDispatch()
+	const [selectedTeacher, setSelectedTeacher] = useState(undefined)
+	const [selectedGym, setSelectedGym] = useState(undefined)
+
+	const { resultSearch, data } = useSelector(
+		(state: IRootState) => state.modalities
+	)
+
 	const { data: teacherData } = useSelector(
 		(state: IRootState) => state.teachers
 	)
@@ -31,6 +44,10 @@ export default function Filters() {
 		[gymsData]
 	)
 
+	const searchClasses = (teacherId?: number, gym?: number) => {
+		dispatch(getModalityClasses(id, selectedTeacher, selectedGym))
+	}
+
 	return (
 		<Container>
 			<Row>
@@ -39,12 +56,23 @@ export default function Filters() {
 					<DropdownInput
 						options={teachers}
 						placeholder='Selecione um Professor'
+						onChange={({ value }) => {
+							setSelectedTeacher(value)
+							searchClasses(value)
+						}}
 					/>
 				</InputArea>
 
 				<InputArea>
 					<Title>Academias</Title>
-					<DropdownInput options={gyms} placeholder='Selecione uma academia' />
+					<DropdownInput
+						options={gyms}
+						placeholder='Selecione uma academia'
+						onChange={({ value }) => {
+							setSelectedGym(value)
+							searchClasses(undefined, value)
+						}}
+					/>
 				</InputArea>
 			</Row>
 		</Container>
