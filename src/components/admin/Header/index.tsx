@@ -20,7 +20,7 @@ export default function Header() {
 			</MiddleContent>
 			<RightContent>
 				<Link href='/profile' passHref>
-					<ProfilePicture src='https://thispersondoesnotexist.com/image' />
+					<ProfilePicture src='https://i.imgur.com/QdLOFBP.jpg' />
 				</Link>
 			</RightContent>
 		</Container>
