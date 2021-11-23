@@ -1,4 +1,3 @@
-import './intro.scss'
 import Hero from '@assets/Hero.png'
 
 const Intro = () => {

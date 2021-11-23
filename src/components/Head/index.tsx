@@ -36,6 +36,7 @@ export default function Head({ title, description, keywords, url }: IHead) {
 				content={metaDescription}
 				key='og:description'
 			/>
+			{}
 		</NextHead>
 	)
 }

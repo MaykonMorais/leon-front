@@ -20,16 +20,15 @@ export const Father = styled.div`
 	align-items: center;
 `
 
-export const Titles = styled.div` 
- 	display: flex;
+export const Titles = styled.div`
+	display: flex;
 	align-items: flex-start;
 	justify-content: space-between;
 	font-family: 'Montserrat', sans-serif;
 	flex-direction: column;
 	padding: 20;
-	
 `
-export const Number =styled.span`
+export const Number = styled.span`
 	display: flex;
 	justify-content: space-around;
 	flex: 1;
@@ -38,18 +37,17 @@ export const Number =styled.span`
 	align-items: center;
 
 	color: #818181;
-	font-weight:lighter;
+	font-weight: lighter;
 	font-size: 32px;
 `
-
 
 export const Title = styled.span`
 	font-weight: lighter;
 `
 
 export const Subtitle = styled.span`
- 		color: #818181;
- 		font-weight: lighter;
+	color: #818181;
+	font-weight: lighter;
 `
 
 export const Locale = styled.div`
@@ -60,5 +58,4 @@ export const Locale = styled.div`
 export const ContainerEnd = styled.div`
 	display: flex;
 	width: 30px;
-
 `
